@@ -1,2 +1,2 @@
 # Estrutura de Linguagens
-Exercícios de Estrtura de Linguagens.
+Exercícios de Estrutura de Linguagens.
