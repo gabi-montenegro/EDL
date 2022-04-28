@@ -1,4 +1,3 @@
-import Data.List 
 --exercicio 3.7.1
 data Alunos = Aluno String Float Float deriving (Show)
 
