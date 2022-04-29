@@ -47,3 +47,17 @@ nomesComMedias = zip alunos medias
 
 aprovados = filter (\(nome, media) -> media >= 7.0) nomesComMedias
 alunosAprovados = map (\(nome, media) -> nome) aprovados
+
+--exercicio 3.9.1
+--media da turma
+somaDasMedias = foldr (+) 0 medias
+nAlunos = length lista 
+mediaDaTurma = (round somaDasMedias) `div` nAlunos
+
+--qtd de alunos aprovados
+qtdAprovados = length aprovados
+
+--media dos alunos reprovados
+listaNotasAbaixo = filter (\medias -> medias < 7.0) medias
+somaReprovados = foldr (+) 0 listaNotasAbaixo
+mediaDosReprovados = (round somaReprovados) `div` nAlunos
