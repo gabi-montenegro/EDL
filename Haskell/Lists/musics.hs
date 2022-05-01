@@ -33,7 +33,7 @@ mscDoisMin = filter (\mus -> (fDuracao mus) >= 120) musicas
 
 --musica de maior duracao
 listaDuracao = map fDuracao musicas
-maiorDuracao = foldr max 0 listaDuracao
+maiorDuracao = foldr (\vl va -> if vl > va then vl else va) 0 listaDuracao
 
 --nomes das musicas com >= 2 min
 nomeDoisMin = map fNome mscDoisMin
