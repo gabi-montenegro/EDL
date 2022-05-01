@@ -1,3 +1,6 @@
+import Data.List
+import System.IO
+
 bandas :: [[String]]
 bandas = [ ["Gilberto Gil"],
            ["Victor", "Leo"],
@@ -41,3 +44,21 @@ nomeDoisMin = map fNome mscDoisMin
 --bandas de cada musica
 autores :: [[String]]
 autores = map (\mus -> bandas !! (idx mus)) musicas 
+
+
+--exercicio 3.11.1 (intercalate)
+fUnicaString :: [String] -> String
+fUnicaString banda = if length banda == 1 then intercalate " " banda else intercalate "," banda
+
+componentes = map fUnicaString bandas
+
+
+--exercicio 3.11.2 (pretty-print)
+exibe :: (String, String, String) -> String
+exibe (nome, aut, duracao) = 
+    "\n------\nnome: " ++ nome ++ "\nautor: " ++ aut ++ "\nduracao: " ++ duracao
+
+bandasComAutores = map (\(nome, autor, duracao) -> (nome, componentes !! autor, show duracao)) musicas
+
+main :: IO ()
+main = putStrLn . unlines . map exibe $ bandasComAutores
