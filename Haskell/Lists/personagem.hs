@@ -1,3 +1,7 @@
+{- Mago: nome, altura, idade, magia do mago 
+   Guerreiro: nome, altura, idade, ataque e defesa do guerreiro
+   Sacerdote: nome, altura, idade, reza do Sacerdote
+-}
 data Personagem = Mago String Float Int Int | Guerreiro String Float Int Int Int | Sacerdote String Float Int Bool deriving (Show)
 
 p1 :: Personagem 
